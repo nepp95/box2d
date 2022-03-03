@@ -4,8 +4,8 @@ project "Box2D"
 	cppdialect "C++11"
 	staticruntime "off"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -21,6 +21,7 @@ project "Box2D"
 	}
 
 	filter "system:windows"
+		architecture "x64"
 		systemversion "latest"
 
 	filter "configurations:Debug"
@@ -28,9 +29,5 @@ project "Box2D"
 		symbols "on"
 
 	filter "configurations:Release"
-		runtime "Release"
-		optimize "on"
-
-	filter "configurations:Dist"
 		runtime "Release"
 		optimize "on"
