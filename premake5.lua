@@ -24,6 +24,9 @@ project "Box2D"
 		architecture "x64"
 		systemversion "latest"
 
+	filter "system:macosx"
+		architecture "ARM64"
+
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
