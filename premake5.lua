@@ -1,4 +1,4 @@
-project "Box2D"
+project "box2d"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++11"
@@ -24,13 +24,14 @@ project "Box2D"
 		architecture "x64"
 		systemversion "latest"
 
-	filter "system:macosx"
-		architecture "ARM64"
-
 	filter "configurations:Debug"
 		runtime "Debug"
-		symbols "on"
+		symbols "On"
 
 	filter "configurations:Release"
 		runtime "Release"
-		optimize "on"
+		optimize "On"
+
+	filter "configurations:Dist"
+		runtime "Release"
+		optimize "On"
